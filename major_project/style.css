@@ -1,0 +1,380 @@
+@font-face {
+    font-family: product sans;
+    src: url(/fonts/Product\ Sans\ Bold.ttf);
+}
+
+@font-face {
+    font-family: gilroy l;
+    src: url(/fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: gilroy d;
+    src: url(/fonts/Gilroy-ExtraBold.otf);
+}
+
+:root {
+    --clr-black: #000;
+    --clr-white: #fff;
+    --clr-orange: #e84949;
+    --clr-light-gray: #E7E7E7;
+    --clr-blue: #4e45d5;
+    --clr-dark-blue: #343d68;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy l;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(150deg, rgb(80, 79, 78), rgb(44, 44, 44));
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    padding: 0vw 10vw;
+    z-index: 99;
+}
+
+.logo img {
+    height: 4rem;
+    width: 4rem;
+}
+
+nav a,
+i {
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+}
+
+.cntr-nav {
+    display: flex;
+    gap: 3vw;
+}
+
+nav i {
+    font-size: 1.5vw;
+}
+
+
+.page1 {
+    height: 100vh;
+    width: 100%;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.page1 h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+
+
+
+
+
+.page2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(150deg, rgb(190, 189, 188), rgb(214, 202, 202));
+}
+
+.left-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5vh;
+    justify-content: center;
+
+}
+
+.left-side #protein1 {
+    width: 30%;
+    height: 70%;
+
+    position: absolute;
+
+}
+
+.right-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.right-side h1 {
+    color: #fff;
+    font-size: 5vw;
+}
+
+.right-side p {
+    color: #fff;
+    font-size: 1vw;
+    width: 80%;
+}
+
+.page3 {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(150deg, rgb(246, 242, 238), rgb(214, 202, 202));
+
+}
+
+.shop-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background-color: #E3E6E6; */
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.box {
+    background-color: white;
+    width: 21.8rem;
+    height: 24.8rem;
+    padding: 20px 0px 15px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.box-content {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.box-img {
+    height: 18.9rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.box p {
+    font-size: 0.8rem;
+}
+
+.page3 h1 {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.cart {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    backdrop-filter: blur(3px);
+    display: none;
+
+}
+
+.cart-container {
+    height: 100%;
+    width: 600px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+}
+
+.cart-container .cart-head {
+    height: 10%;
+    width: 100%;
+    /* background: red; */
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-container .cart-head .cart-icon {
+    height: 100%;
+    width: 30%;
+    /* background: red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-container .cart-head .cart-icon i:nth-last-child(1) {
+    height: 80%;
+    width: 45px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s linear;
+}
+
+.cart-container .cart-head .cart-icon i:nth-last-child(1):hover {
+    color: white;
+    background: black;
+}
+
+.cart-close {
+    color: black;
+}
+
+.cart-container .cart-head h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+}
+
+.cart-container .cart-head i {
+    font-size: 25px;
+}
+
+.products-collection {
+    height: 80%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.cart-product-content>h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+    text-decoration: underline dotted;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    width: fit-content;
+}
+
+
+.counter {
+    background: rgba(193, 193, 193, 0.361);
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.counter i {
+    font-size: 20px;
+    padding: 1px 5px;
+}
+
+.show-count {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    padding: 2px 0;
+    border-right: 1px solid rgb(68, 68, 68);
+    border-left: 1px solid rgb(68, 68, 68);
+}
+
+.cart-options {
+    height: 10%;
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.cart-options button {
+    height: 35px;
+    width: 130px;
+    border-radius: 70px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    text-transform: capitalize;
+    transition: all 0.15s linear;
+}
+
+.cart-options button:hover {
+    border-color: rgb(152, 0, 0);
+    box-shadow: 0px 0px 10px rgb(237, 0, 0);
+    background: red;
+    color: white;
+}
+
+.cart-options button:active {
+    background: rgb(187, 0, 0);
+}
+
+.cart-container h3 {
+    color: white;
+    text-align: center;
+}
+
+
+
+.buy-now3 {
+    height: 35px;
+    width: 130px;
+    border-radius: 70px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    text-transform: capitalize;
+    transition: all 0.15s linear;
+}
+
+.buy-now3:hover {
+    border-color: rgb(102, 106, 107);
+    box-shadow: 0px 0px 10px rgb(134, 136, 136);
+    background: rgb(102, 106, 107);
+    color: white;
+}
+
+.buy-now3:active {
+    background: rgb(79, 84, 85);
+}
