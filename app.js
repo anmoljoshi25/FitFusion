@@ -140,3 +140,18 @@ scrollTrigger: {
     pin: true
 }
 });
+
+
+gsap.from(".page-2 .boxes",{
+    scale : 0,
+    opacity : 0, 
+    duration : 1,
+    stagger : 0.3,
+    scrollTrigger :{
+        trigger : ".page-2 .boxes",
+        scroller : "body",
+        markers : false,
+        start : "top 70%"
+    }
+
+})

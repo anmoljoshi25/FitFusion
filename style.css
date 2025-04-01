@@ -31,15 +31,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: gilroy l;
+    user-select: none;
 }
 
 #cursor {
-    height: 20px;
-    width: 20px;
+    height: 50px;
+    width: 50px;
     background-color: white;
     border-radius: 50%;
     position: fixed;
+    z-index: 999;
 }
+
 
 html,
 body {
@@ -91,18 +94,19 @@ nav i {
 
 
 .page1 {
-    /* height: 100vh;
-    width: 100%;
 
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
 
     height: 100vh;
     width: 100%;
     background-color: black;
     overflow: hidden;
+    background-image: url(assets/first-page.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: grayscale(50%) brightness(90%) sepia(10%); */
+    background-color: rgba(26, 26, 26, 0.5); /* Change color here */
+    background-blend-mode: darken;
+    
 }
     
 
@@ -118,6 +122,7 @@ nav i {
     white-space: nowrap;
     font-stretch: 260%;
     font-weight: 999;
+   
 }
 
 
@@ -125,14 +130,36 @@ nav i {
 
 
 
-.page2 {
+.page-2 {
     width: 100%;
     height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     background: linear-gradient(150deg, rgb(190, 189, 188), rgb(214, 202, 202));
+    
 }
 
-.left-side {
+.boxes{
+    height: 300px;
+    width: 400px;
+    border: 3px solid #fff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+}
+.boxes h1{
+    margin-bottom: 30px;
+    text-transform: uppercase ;
+    font-size: 30px;
+}
+.boxes p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #191919;
+}
+
+/* .left-side {
     width: 50%;
     height: 100%;
     display: flex;
@@ -169,7 +196,7 @@ nav i {
     color: #fff;
     font-size: 1vw;
     width: 80%;
-}
+} */
 
 .page3 {
     width: 100%;
@@ -194,11 +221,16 @@ nav i {
     padding: 20px 0px 15px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+   
 }
 
 .box-content {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .box-img {
@@ -384,6 +416,9 @@ nav i {
     border: 1px solid black;
     text-transform: capitalize;
     transition: all 0.15s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buy-now3:hover {
@@ -397,151 +432,109 @@ nav i {
     background: rgb(79, 84, 85);
 }
 
-
-
-/* Responsive Design */
-
-/* nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 10vw;
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+.grand_total{
+    position: absolute;
+   bottom: 4%;
+   font-size: 20px;
+   font-weight: 400;
 }
 
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
 
-.cntr-nav {
-    display: flex;
-    gap: 3vw;
-}
 
-@media screen and (max-width: 1024px) {
+
+@media (max-width: 768px) {
     nav {
-        padding: 1rem 5vw;
-    }
-    
-    .cntr-nav {
-        display: none;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
+        padding: 0 5vw;
     }
-    
-    .menu-icon {
-        display: block;
+
+    nav a {
+        font-size: 3vw;
     }
-    
-    .menu-open .cntr-nav {
-        display: flex;
-    }
-    
+
     .page1 h1 {
-        font-size: 5vw;
+        font-size: 60vw; 
     }
-    
-    .page2 {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-    
+
     .left-side, .right-side {
         width: 100%;
-        text-align: center;
-    }
-    
-    .left-side img {
-        width: 80%;
         height: auto;
-    }
-    
-    .right-side h1 {
-        font-size: 6vw;
-    }
-    
-    .right-side p {
-        font-size: 1.5vw;
-        width: 90%;
-        margin: auto;
-    }
-    
-    .shop-section {
-        margin: 2rem;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    
-    .box {
-        width: 100%;
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
-    .box img {
-        width: 100%;
+
+    .left-side #protein1 {
+        width: 80%; 
         height: auto;
     }
-    
-    .cart-container {
-        width: 80%;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: row;
-    }
-    
-    .shop-section {
-        grid-template-columns: 1fr;
-    }
-    
-    .box img {
-        width: 80%;
-        height: auto;
-    }
-    
-    .cart-container {
-        width: 100%;
-    }
-    
-    .cart-product img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .page1 h1 {
-        font-size: 6vw;
-    }
-    
     .right-side h1 {
-        font-size: 7vw;
+        font-size: 8vw;
     }
-    
+
     .right-side p {
-        font-size: 3vw;
+        font-size: 3vw; 
+        width: 90%; 
     }
-    
+
+    .shop-section {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    .box {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
     .cart-container {
-        width: 100%;
+        width: 90%;
+        padding: 0 10px;
     }
-} */
+
+    .cart-options button {
+        width: 100%
+        /* margin: 0.5rem 0; */
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        padding: 0 8vw;
+    }
+
+    nav a {
+        font-size: 2.5vw;
+    }
+
+    .page1 h1 {
+        font-size: 50vw; 
+    }
+    .left-side, .right-side {
+        width: 50%; 
+    }
+
+    .right-side h1 {
+        font-size: 6vw; 
+    }
+
+    .right-side p {
+        font-size: 2.5vw; 
+        width: 85%; 
+    }
+
+    .shop-section {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .box {
+        width: 45%; 
+        margin: 1rem; 
+    }
+}
+
+
+
+
