@@ -172,6 +172,7 @@ nav i {
 
 .serv {
     margin-bottom: 110px;
+    font-size: 60px;
 }
 
 .page2-container {
@@ -741,22 +742,27 @@ footer .developers-details {
 .developers-twitter {
     display: flex;
     flex-direction: column;
+    
 }
 
 .developers-gmails .gmail {
     font-size: 1vw;
     text-align: center;
+    margin-bottom: 2px;
+    
 }
 
 .developers-github .github {
     font-size: 1vw;
     text-align: center;
     color: white;
+    margin-bottom: 2px;
 }
 
 .developers-twitter .twitter {
     font-size: 1vw;
     text-align: center;
+    margin-bottom: 2px;
 }
 
 .developers-gmails a {
