@@ -12,6 +12,7 @@
     font-family: gilroy d;
     src: url(/fonts/Gilroy-ExtraBold.otf);
 }
+
 @font-face {
     font-family: head;
     src: url(/fonts/Heading-Now-Variable.ttf);
@@ -104,13 +105,41 @@ nav i {
     background-size: cover;
     background-repeat: no-repeat;
     /* filter: grayscale(50%) brightness(90%) sepia(10%); */
-    background-color: rgba(26, 26, 26, 0.5); /* Change color here */
+    background-color: rgba(26, 26, 26, 0.5);
+    /* Change color here */
     background-blend-mode: darken;
-    
+
 }
-    
 
 
+.sign-up_log-in {
+    height: 80%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+
+.sign-up_log-in button {
+    height: 60%;
+    width: 80%;
+    border-radius: 4vw;
+    font-size: 14px;
+    font-family: gilroy l;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(89, 131, 156);
+    color: rgb(248, 248, 248);
+    border-style: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sign-up_log-in button a {
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 .page1 h1 {
     /* font-size: 40px; */
@@ -122,7 +151,7 @@ nav i {
     white-space: nowrap;
     font-stretch: 260%;
     font-weight: 999;
-   
+
 }
 
 
@@ -136,27 +165,92 @@ nav i {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: column;
     background: linear-gradient(150deg, rgb(190, 189, 188), rgb(214, 202, 202));
-    
+
 }
 
-.boxes{
+.serv {
+    margin-bottom: 110px;
+}
+
+.page2-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.boxes {
     height: 300px;
     width: 400px;
     border: 3px solid #fff;
     text-align: center;
     padding: 30px;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
-.boxes h1{
+.b1{
+    margin-bottom: 200px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+.b2 {
+    margin-top: 200px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+.b3{
+    margin-bottom: 200px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+
+.boxes h1 {
     margin-bottom: 30px;
-    text-transform: uppercase ;
+    text-transform: uppercase;
     font-size: 30px;
 }
-.boxes p{
+
+.boxes p {
     font-size: 20px;
     font-weight: 600;
     color: #191919;
+}
+
+.wrkout {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+
+.wrkout button {
+    height: 100%;
+    width: 100%;
+    border-radius: 4vw;
+    font-size: 14px;
+    font-family: gilroy l;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(199, 46, 46);
+    color: rgb(248, 248, 248);
+    border-style: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.wrkout button a {
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 /* .left-side {
@@ -221,7 +315,7 @@ nav i {
     padding: 20px 0px 15px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-   
+
 }
 
 .box-content {
@@ -432,11 +526,11 @@ nav i {
     background: rgb(79, 84, 85);
 }
 
-.grand_total{
+.grand_total {
     position: absolute;
-   bottom: 4%;
-   font-size: 20px;
-   font-weight: 400;
+    bottom: 4%;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 
@@ -453,10 +547,11 @@ nav i {
     }
 
     .page1 h1 {
-        font-size: 60vw; 
+        font-size: 60vw;
     }
 
-    .left-side, .right-side {
+    .left-side,
+    .right-side {
         width: 100%;
         height: auto;
         flex-direction: column;
@@ -464,7 +559,7 @@ nav i {
     }
 
     .left-side #protein1 {
-        width: 80%; 
+        width: 80%;
         height: auto;
     }
 
@@ -473,8 +568,8 @@ nav i {
     }
 
     .right-side p {
-        font-size: 3vw; 
-        width: 90%; 
+        font-size: 3vw;
+        width: 90%;
     }
 
     .shop-section {
@@ -494,7 +589,7 @@ nav i {
 
     .cart-options button {
         width: 100%
-        /* margin: 0.5rem 0; */
+            /* margin: 0.5rem 0; */
     }
 }
 
@@ -509,19 +604,21 @@ nav i {
     }
 
     .page1 h1 {
-        font-size: 50vw; 
+        font-size: 50vw;
     }
-    .left-side, .right-side {
-        width: 50%; 
+
+    .left-side,
+    .right-side {
+        width: 50%;
     }
 
     .right-side h1 {
-        font-size: 6vw; 
+        font-size: 6vw;
     }
 
     .right-side p {
-        font-size: 2.5vw; 
-        width: 85%; 
+        font-size: 2.5vw;
+        width: 85%;
     }
 
     .shop-section {
@@ -530,11 +627,184 @@ nav i {
     }
 
     .box {
-        width: 45%; 
-        margin: 1rem; 
+        width: 45%;
+        margin: 1rem;
     }
 }
 
 
 
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
 
+/* Submenu styling */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 160px;
+}
+
+/* Submenu links */
+.submenu li a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    /* list-style: none; */
+    transition: background 1s;
+}
+
+.submenu li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show submenu on hover */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    height: 40vh;
+    
+}
+footer .developers-details {
+    height: 100%;
+    width: 100%;
+    background-color: #d6d6d4;
+  
+}
+
+.developers-names {
+    /* height: 100%;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    margin-bottom: 30px;
+}
+
+.linkedin-profiles a {
+    text-decoration: none;
+    color: black;
+    font-size: 1vw;
+    margin: 0.3vw;
+}
+
+.developed-by {
+    font-size: 2vw;
+    margin: 0.5vw 0;
+    margin-bottom: 20px;
+}
+
+.developers-accounts {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0.7w 0;
+}
+
+.developers-gmails {
+    display: flex;
+    flex-direction: column;
+}
+
+.developers-github {
+    display: flex;
+    flex-direction: column;
+}
+
+.developers-twitter {
+    display: flex;
+    flex-direction: column;
+}
+
+.developers-gmails .gmail {
+    font-size: 1vw;
+    text-align: center;
+}
+
+.developers-github .github {
+    font-size: 1vw;
+    text-align: center;
+    color: white;
+}
+
+.developers-twitter .twitter {
+    font-size: 1vw;
+    text-align: center;
+}
+
+.developers-gmails a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9vw;
+}
+
+.developers-github a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9vw;
+}
+
+.developers-twitter a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9vw;
+}
+
+
+
+.copyright-conditions {
+    height: 76px;
+}
+
+.pages {
+    text-align: center;
+    padding-top: 25px;
+    margin-top: 20px;
+   
+   
+}
+
+.pages a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.7vw;
+
+}
+
+.pages a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    color: black;
+    font-size: 0.7vw;
+    text-align: center;
+    padding-top: 5px;
+}

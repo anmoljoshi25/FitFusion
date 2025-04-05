@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Calculator - FitFusion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+       body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 40%;
+      background: #222;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    h2 {
+      color: #ff2e2e;
+      font-weight: 600;
+    }
+
+    input, select, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input, select {
+      background: #333;
+      color: #fff;
+    }
+
+    button {
+      background: #ff2e2e;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #cc0000;
+    }
+
+    #result {
+      margin-top: 20px;
+      background: #333;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    h3 {
+      color: #ffcc00;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diet Plan Calculator</h2>
+        <label>Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter your weight" required>
+        
+        <label>Height (inches):</label>
+        <input type="number" id="height" placeholder="Enter your height" required>
+        
+        <label>Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" required>
+        
+        <label>Goal:</label>
+        <select id="goal">
+            <option value="bulking">Bulking</option>
+            <option value="cutting">Cutting</option>
+            <option value="weight_gain">Weight Gain</option>
+        </select>
+        
+        <button onclick="calculateDiet()">Get Diet Plan</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.to(".container", {opacity: 1, y: 0, duration: 1, ease: "power2.out"});
+        });
+        
+        function calculateDiet() {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+            let age = document.getElementById("age").value;
+            let goal = document.getElementById("goal").value;
+            let result = document.getElementById("result");
+            
+            if (!weight || !height || !age) {
+                result.innerHTML = "Please enter all values.";
+                gsap.to("#result", {opacity: 1, duration: 1});
+                return;
+            }
+            
+            let heightCm = height * 2.54; // Convert inches to cm
+            let calorieIntake;
+            
+            if (goal === "bulking") {
+                calorieIntake = (weight * 35) + 500; // Higher calorie intake for muscle gain
+                result.innerHTML = `For Bulking: Consume around ${calorieIntake} calories/day.<br>
+                High-protein diet with complex carbs, healthy fats, and strength training.`;
+            } else if (goal === "cutting") {
+                calorieIntake = (weight * 30) - 500; // Lower calorie intake for fat loss
+                result.innerHTML = `For Cutting: Consume around ${calorieIntake} calories/day.<br>
+                High-protein, low-carb, and focus on lean meats, veggies, and cardio workouts.`;
+            } else if (goal === "weight_gain") {
+                calorieIntake = (weight * 32) + 300; // Moderate calorie surplus for steady weight gain
+                result.innerHTML = `For Weight Gain: Consume around ${calorieIntake} calories/day.<br>
+                Balanced diet with carbs, protein, and healthy fats with progressive training.`;
+            }
+            gsap.to("#result", {opacity: 1, duration: 1, scale: 1.1, ease: "elastic.out(1, 0.5)"});
+        }
+    </script>
+</body>
+</html>

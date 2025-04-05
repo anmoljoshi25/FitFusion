@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Workout Plan - FitFusion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 40%;
+            background: #222;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+            text-align: center;
+        }
+        h2 {
+            color: #ff2e2e;
+            font-weight: 600;
+        }
+        select, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        select {
+            background: #333;
+            color: #fff;
+        }
+        button {
+            background: #ff2e2e;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #cc0000;
+        }
+        #workout-plan {
+            margin-top: 20px;
+            text-align: left;
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        h3 {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gym Workout Plan</h2>
+        <label>Select Your Goal:</label>
+        <select id="goal">
+            <option value="bulking">Bulking</option>
+            <option value="cutting">Cutting</option>
+            <option value="weight_loss">Weight Loss</option>
+        </select>
+        <button onclick="generateWorkoutPlan()">Get Workout Plan</button>
+        <div id="workout-plan"></div>
+    </div>
+
+    <script>
+        function generateWorkoutPlan() {
+            let goal = document.getElementById("goal").value;
+            let plan = "";
+
+            if (goal === "bulking") {
+                plan = `<h3>Bulking Workout Plan</h3>
+                        <ul>
+                            <li><b>Monday - Chest:</b> Bench Press, Dumbbell Flys, Incline Press, Push-ups</li>
+                            <li><b>Tuesday - Triceps:</b> Tricep Dips, Skull Crushers, Close-Grip Bench Press</li>
+                            <li><b>Wednesday - Back:</b> Deadlifts, Pull-ups, Lat Pulldown, Bent-over Rows</li>
+                            <li><b>Thursday - Biceps:</b> Barbell Curls, Hammer Curls, Preacher Curls</li>
+                            <li><b>Friday - Shoulders:</b> Overhead Press, Lateral Raises, Arnold Press</li>
+                            <li><b>Saturday - Legs:</b> Squats, Leg Press, Lunges, Calf Raises</li>
+                            <li><b>Sunday - Rest</b></li>
+                        </ul>`;
+            } else if (goal === "cutting") {
+                plan = `<h3>Cutting Workout Plan</h3>
+                        < <ul>
+                            <li><b>Monday - Chest & Triceps:</b> Bench Press, Incline Dumbbell Press, Tricep Dips, Skull Crushers</li>
+                            <li><b>Tuesday - Back & Biceps:</b> Deadlifts, Pull-ups, Lat Pulldown, Barbell Curls, Hammer Curls</li>
+                            <li><b>Wednesday - Legs:</b> Squats, Leg Press, Lunges, Romanian Deadlifts, Calf Raises</li>
+                            <li><b>Thursday - Shoulders & Abs:</b> Overhead Press, Lateral Raises, Hanging Leg Raises, Planks</li>
+                            <li><b>Friday - Arms & Core:</b> Close-Grip Bench Press, Preacher Curls, Russian Twists, Bicycle Crunches</li>
+                            <li><b>Saturday - High-Intensity Cardio:</b> HIIT, Sprint Intervals, Jump Rope</li>
+                            <li><b>Sunday - Rest</b></li>
+                        </ul>`;
+            } else if (goal === "weight_loss") {
+                plan = `<h3>Weight Loss Workout Plan</h3>
+                        <ul>
+                            <li><b>Monday - Cardio & Strength:</b> Treadmill, Jump Rope, Bodyweight Squats</li>
+                            <li><b>Tuesday - HIIT:</b> Burpees, Mountain Climbers, Kettlebell Swings</li>
+                            <li><b>Wednesday - Active Recovery:</b> Brisk Walking, Cycling, Yoga</li>
+                            <li><b>Thursday - Strength Training:</b> Deadlifts, Pull-ups, Dumbbell Rows</li>
+                            <li><b>Friday - Cardio & Core:</b> Running, Planks, Russian Twists</li>
+                            <li><b>Saturday - Circuit Training:</b> Squats, Lunges, Jump Squats, Battle Ropes</li>
+                            <li><b>Sunday - Rest</b></li>
+                        </ul>`;
+            }
+
+            document.getElementById("workout-plan").innerHTML = plan;
+        }
+    </script>
+</body>
+</html>
