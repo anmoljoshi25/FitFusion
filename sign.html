@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="./media/favicon.jpg" type="image/x-icon">
     <link rel="shortcut icon" href="./assets/gymmen2-removebg-preview.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
-    <title>Fit-Fusion</title>
+    <title>Sign-Up</title>
     <style>
         * {
     margin: 0;
@@ -124,10 +125,6 @@
     font-weight: 600;
     margin-left: 1vw;
   }
-  .signup-btn a {
-    text-decoration: none;
-    color: white;
-  }
   .last-p{
     text-align: center;
     font-size: 0.8vw;
@@ -206,10 +203,14 @@
     <div class="main">
     <div class="wrapper">
         <form action="">
-            <h1>Login</h1>
+            <h1>Sign Up</h1>
             <div class="input-box">
                 <input type="text" placeholder="Username" required>
                 <i class="ri-user-fill"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Gmail" required>
+                <i class="ri-mail-line"></i>
             </div>
             <div class="input-box">
                 <input type="password" placeholder="Password" required>
@@ -219,9 +220,9 @@
                 <a href="#">Forgot Password</a>
             </div>
             <div class="login-signup-btn">
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" href="login.html"  class="login-btn">Login</button>
                 <p>or</p>
-                <button type="submit" class="signup-btn"><a href="sign.html">Sign-up</a></button>
+                <button type="submit" class="signup-btn">Sign-up</button>
             </div>
             <p class="last-p">or</p>
             <div class="extra-buttons">

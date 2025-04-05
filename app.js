@@ -114,6 +114,8 @@ cart_open_button.addEventListener("click", () => {
 
 
 
+
+
 // GSAP start
 var main = document.querySelector(".main")
 var cursor = document.querySelector("#cursor")
