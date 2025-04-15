@@ -519,12 +519,12 @@ nav i {
 .buy-now3:hover {
     border-color: rgb(102, 106, 107);
     box-shadow: 0px 0px 10px rgb(134, 136, 136);
-    background: rgb(102, 106, 107);
+    background: #c72e2e;
     color: white;
 }
 
 .buy-now3:active {
-    background: rgb(79, 84, 85);
+    background: #e05050
 }
 
 .grand_total {
