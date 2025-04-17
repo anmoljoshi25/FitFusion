@@ -35,7 +35,7 @@ cart_open_button.addEventListener("click", () => {
         button.addEventListener("click", function () {
             let productBox = this.closest(".box");
             let productImage = productBox.querySelector(".box-img").src;
-            let price = Math.floor(Math.random() * 50) + 10; // Random price for demo
+            let price = Math.floor(Math.random() * 50) + 10; 
             
             let existingCartItem = [...cartContainer.querySelectorAll(".cart-item")].find(item => 
                 item.querySelector(".cart-product-img").src === productImage);
