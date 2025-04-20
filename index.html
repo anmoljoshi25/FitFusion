@@ -28,7 +28,7 @@
                 </div>
                 <div class="cart-options">
 
-                    <div class="grand_total">Total: $0</div>
+                    <div class="grand_total">Total: ₹0</div>
                     <button class="buy-items-from-cart">Buy Products</button>
                     <button class="remove-items-from-cart">Remove all Products</button>
 
@@ -64,8 +64,10 @@
                 <a href="/html/contact.html">Contact</a>
             </div>
             <div class="sign-up_log-in">
-                <button><a href="html/Login.html">Login</a></button>
+                <button><a href="html/Login.html" id="loginBtn">Login</a></button>
+                <button id="logoutBtn" style="display: none;"> <a href="#" >Logout</a></button>
             </div>
+      
             <!-- <i class="ri-menu-fill"></i> -->
             <div class="cart-section">
                 <i class="ri-shopping-bag-2-line"></i>
@@ -260,6 +262,34 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app.js"></script>
+    <script>
+        const loginBtn = document.getElementById("loginBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+      
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const username = localStorage.getItem("username");
+      
+        if (isLoggedIn === "true" && username) {
+          loginBtn.innerText = "Welcome, " + username;
+          
+          loginBtn.href = "#";
+          logoutBtn.style.display = "inline-block"; // Show logout button
+        } else {
+          logoutBtn.style.display = "none"; // Hide logout if not logged in
+        }
+      
+        logoutBtn.addEventListener("click", () => {
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("username");
+          alert("You have been logged out.");
+          window.location.href = "html/Login.html";
+        });
+      </script>
+      
+
+
+      
+ 
 </body>
 
 </html>

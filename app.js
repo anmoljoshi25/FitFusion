@@ -5,6 +5,7 @@ const menu_close_button = document.querySelector(".menu-close");
 const cart_open_button = document.querySelector(".cart-section");
 
 
+
 cart_open_button.addEventListener("click", () => {
     cart.style.display = "flex";
     setTimeout(() => {
@@ -35,7 +36,7 @@ cart_open_button.addEventListener("click", () => {
         button.addEventListener("click", function () {
             let productBox = this.closest(".box");
             let productImage = productBox.querySelector(".box-img").src;
-            let price = Math.floor(Math.random() * 50) + 10; 
+            let price = Math.floor(Math.random() * 1750) + 10; 
             
             let existingCartItem = [...cartContainer.querySelectorAll(".cart-item")].find(item => 
                 item.querySelector(".cart-product-img").src === productImage);
@@ -52,7 +53,7 @@ cart_open_button.addEventListener("click", () => {
                 cartItem.innerHTML = `
                     <div class="cart-product">
                         <img src="${productImage}" class="cart-product-img" alt="Product" style="width: 200px; height: 200px; object-fit: cover;">
-                        <span class="product-price">$${price}</span>
+                        <span class="product-price">₹${price}</span>
                         <button class="decrement">-</button>
                         <span class="quantity">1</span>
                         <button class="increment">+</button>
@@ -106,13 +107,30 @@ cart_open_button.addEventListener("click", () => {
     }
 
     function updateGrandTotal() {
-        grandTotalElement.textContent = `Total: $${grandTotal}`;
+        grandTotalElement.textContent = `Total: ₹${grandTotal}`;
     }
 });
 
 
 
-
+function login(event) {
+    event.preventDefault(); // Prevent form reload
+  
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+  
+    if (username && password) {
+      // Store login data
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", username);
+  
+      alert("Login successful!");
+      window.location.href = "../index.html"; // Redirect to homepage
+    } else {
+      alert("Please enter both username and password");
+    }
+  }
+  
 
 
 
